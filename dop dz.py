@@ -22,3 +22,21 @@ class Store():
             print(f"Цена на {item_name} обновллена в магазине {self.name}")
         else:
             print(f"Товар {item_name} не найден")
+
+
+store1 = Store("Пятерочка", "Петровка 38")
+store2 = Store("Азбука вкуса", "Серебрякова 12")
+store3 = Store("ВкусВилл", "Ахматовой 6")
+
+store1.add_items("Хлеб", 85)
+store1.add_items("Яблоки", 105)
+store1.add_items("Вино белое", 670)
+
+store1.remove_item("Хлеб")
+
+print(store1.get_price("Яблоки"))
+
+store1.update_price("Вино белое", 800)
+
+
+
