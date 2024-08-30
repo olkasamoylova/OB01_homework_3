@@ -10,18 +10,25 @@ class Task():
             if task['description'] == description: #если описание нашей задачи совпадает с выполнено, то меняем статус
                 task['status'] = "complete"
                 print(f"Задача {task['description']} выполнена")
-            else:
-                print(f"Задача {task['description']} не найдена")
+            #else:
+                #print(f"Задача {task['description']} не найдена")
 
     def show_tasks(self):
-        print("Текущие задачи")
+        print("Текущие задачи:")
         for task in self.tasks:
             if task['status'] == "not completed":
                 print(f"{task['description']} - {task['deadline']}")
 
 
+t = Task()
+t.add_task("01-06-2025", "Прочитать книгу")
+t.add_task("01-07-2025", "Пробежать марафон")
+t.add_task("01-08-2025", "Погладить кота")
+t.add_task("01-09-2025", "Полить цветок")
+t.add_task("01-10-2025", "Починить машину")
 
+t.show_tasks()
 
+t.complete_task("Прочитать книгу")
 
-
-
+t.show_tasks()
